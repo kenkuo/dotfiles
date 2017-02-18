@@ -7,26 +7,27 @@ endif
 
 " vim-plug directory
 call plug#begin('~/.vim/plugged')
-
+Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
-
+Plug 'tmux-plugins/vim-tmux'
 call plug#end()
 
 "needed to fix startify?
 set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 syntax enable
-colorscheme monokai
-" colorscheme solarized
-" set background=dark
-" set t_Co=256
-
-
+set background=dark
+colorscheme solarized
+set t_Co=256
+"    if has("termguicolors")
+"            set termguicolors
+"        endif
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab autoindent
 set nu
