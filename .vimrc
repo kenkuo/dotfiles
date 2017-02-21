@@ -33,7 +33,7 @@ set t_Co=256
 "            set termguicolors
 "        endif
 
-"needed for vim-airline
+"vim-airline settings
 set laststatus=2
 let g:airline_theme='solarized'
 
