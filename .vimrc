@@ -38,7 +38,7 @@ call plug#end()
 
 "startify
 set viminfo='100,n$HOME/.vim/files/info/viminfo
-let g:startify_custom_indices= ['a','s','d','f','j','k','l',';']
+let g:startify_custom_indices= ['1','2','3','4','5','6','7','8','9']
 
 "vim-airline settings
 set laststatus=2
