@@ -1,7 +1,7 @@
 #!/bin/bash
 echo starting..
 #install base dependencies
-sudo apt-get install git yadm tmux vim
+sudo apt-get install git yadm tmux vim curl
 
 #yadm
 yadm clone https://github.com/kenkuo/dotfiles.git
@@ -14,10 +14,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #vim YouCompleteMe
 sudo apt-get install build-essential cmake
 sudo apt-get install python-dev python3-dev
-(cd ~/.vim/plugged/YouCompleteMe && ./install.py)
 
 #vim startify
-mkdir -p ~/.vim/files.info
+mkdir -p ~/.vim/files/info
 
 #set up vim
 vim +PlugInstall +qall
