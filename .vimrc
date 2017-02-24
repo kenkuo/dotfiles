@@ -5,6 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"YCM auto compile
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
   " - name:   name of the plugin
@@ -18,23 +19,35 @@ endfunction
 
 " vim-plug directory
 call plug#begin('~/.vim/plugged')
+"themes
 Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
+Plug 'crusoexia/vim-monokai'
+"auto-complete
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+"statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"start screen
 Plug 'mhinz/vim-startify'
+"directory browser
 Plug 'scrooloose/nerdtree'
+"vim-tmux integration
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'crusoexia/vim-monokai'
-Plug 'edkolev/tmuxline.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+"tmux.conf syntax highlighting
+Plug 'tmux-plugins/vim-tmux'
+"tmux statusline generator
+Plug 'edkolev/tmuxline.vim'
+"vim tweaks
 Plug 'tpope/vim-sensible'
+"adds vim commands :SudoWrite
+Plug 'tpope/vim-eunuch'
+"git marks
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-"YCM auto compile
 
 "startify
 set viminfo='100,n$HOME/.vim/files/info/viminfo
@@ -43,12 +56,17 @@ let g:startify_custom_indices= ['1','2','3','4','5','6','7','8','9']
 "vim-airline settings
 set laststatus=2
 let g:airline_theme='solarized'
+let g:airline_powerline_fonts=1
+let g:airline_section_z=
 
 syntax enable
 set background=dark
 colorscheme solarized
 set t_Co=256
 
-
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab autoindent
-set nu
+set updatetime=250 ttyfast
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab autoindent
+set relativenumber undofile showcmd hidden visualbell wildmenu wildmode=list:longest
+set ignorecase smartcase gdefault incsearch showmatch hlsearch
+set cursorline wrap 
+set nocompatible
