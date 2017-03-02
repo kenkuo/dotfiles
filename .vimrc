@@ -22,7 +22,7 @@ call plug#begin('~/.vim/plugged')
 "themes
 Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'sickill/vim-monokai'
+" Plug 'sickill/vim-monokai'
 Plug 'crusoexia/vim-monokai'
 "auto-complete
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
@@ -55,18 +55,38 @@ let g:startify_custom_indices= ['1','2','3','4','5','6','7','8','9']
 
 "vim-airline settings
 set laststatus=2
-let g:airline_theme='solarized'
+let g:airline_theme='monokai'
 let g:airline_powerline_fonts=1
-let g:airline_section_z=
+let g:airline_section_x = ''        " Get rid of the file encoding
+let g:airline_section_y = ''        " Get rid of the file type
+" Truncate the status mode to one capital letter
+let g:airline_mode_map = {
+\ '__' : '-',
+\ 'n'  : 'N',
+\ 'i'  : 'I',
+\ 'R'  : 'R',
+\ 'c'  : 'C',
+\ 'v'  : 'V',
+\ 'V'  : 'V',
+\ '^V' : 'V',
+\ 's'  : 'S',
+\ 'S'  : 'S',
+\ '^S' : 'S',
+\ }
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme monokai
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
 set t_Co=256
 
 set updatetime=250 ttyfast
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab autoindent
-set relativenumber undofile showcmd hidden visualbell wildmenu wildmode=list:longest
+set nu relativenumber undofile showcmd hidden visualbell wildmenu wildmode=list:longest
 set ignorecase smartcase gdefault incsearch showmatch hlsearch
-set cursorline wrap 
+set cursorline wrap
 set nocompatible
+
+
+nnoremap ; :
