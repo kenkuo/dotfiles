@@ -1,3 +1,6 @@
+" make sure this stays at the top --->
+set nocompatible
+" <----
 " auto install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -86,7 +89,6 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab autoindent
 set nu relativenumber undofile showcmd hidden visualbell wildmenu wildmode=list:longest
 set ignorecase smartcase gdefault incsearch showmatch hlsearch
 set cursorline wrap
-set nocompatible
 
 
 nnoremap ; :
