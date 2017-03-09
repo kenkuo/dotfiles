@@ -90,5 +90,6 @@ set nu relativenumber undofile showcmd hidden visualbell wildmenu wildmode=list:
 set ignorecase smartcase gdefault incsearch showmatch hlsearch
 set cursorline wrap
 
-
-nnoremap ; :
+"enable transparency
+hi Normal ctermbg=none
+highlight NonText ctermbg=none
